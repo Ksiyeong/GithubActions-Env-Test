@@ -36,13 +36,11 @@ jobs:
         DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
-        arguments: build
+        arguments: clean bootJar
 
     # 3. Docker 이미지 빌드
     - name: docker image build
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/secret_test --build-arg DEMO_SECRET=${{ secrets.DEMO_SECRET }} .
-      working-directory: .
-
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/secret_test .
 
       # 4. DockerHub 로그인
     - name: docker login
