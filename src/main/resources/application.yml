@@ -1,0 +1,2 @@
+demo:
+  secret: ${DEMO_SECRET}
