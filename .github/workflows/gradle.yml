@@ -30,12 +30,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Set up ENV
-      env:
-        DEMO_SECRET: set-env-test-hello
-
     # 2. Spring Boot 애플리케이션 빌드
     - name: Build with Gradle
+      env:
+        DEMO_SECRET: this_is_new
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
