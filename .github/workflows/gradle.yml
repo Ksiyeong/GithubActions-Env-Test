@@ -40,7 +40,7 @@ jobs:
 
     # 3. Docker 이미지 빌드
     - name: docker image build
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/secret_test --build -arg DEMO_SECRET=${{ secrets.DEMO_SECRET }} .
+      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/secret_test --build-arg DEMO_SECRET=${{ secrets.DEMO_SECRET }} .
 
     # 4. DockerHub 로그인
     - name: docker login
