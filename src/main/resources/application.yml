@@ -1,2 +1,2 @@
 demo:
-  secret: ${DEMO_SECRET}
+  secret: ${{ secrets.DEMO_SECRET }}
